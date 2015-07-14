@@ -1,0 +1,64 @@
+/*
+Theme Name: Worthy - Free Powerful Theme by HtmlCoder
+Author:HtmlCoder
+Author URI:http://www.htmlcoder.me
+Version:1.0.0
+Created:November 2014
+License: Creative Commons Attribution 3.0 License (https://creativecommons.org/licenses/by/3.0/)
+File Description: Place here your custom CSS styles
+*/
+
+/* Services
+---------------------------------- */
+.services .media-left {
+    width: 60px;
+}
+
+.bg-mission-image {
+    background: url("../images/bg-mission-image.jpg") 50% 0px no-repeat;
+}
+
+.mission-quote-left:before {
+    content: "\f10d";
+    display: inline-block;
+    position: relative;
+    /* top: -.8em; */
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 1.25em;
+}
+.mission-quote-right:before {
+    content: "\f10e";
+    display: inline-block;
+    position: relative;
+    /* top: -.8em; */
+    padding: 0 .25em;
+    font-family: FontAwesome;
+    font-size: 1.25em;
+}
+
+.quotemark {
+    font-size: 60px;
+    margin-right: 10px;
+    color: #f0d117;
+}
+
+.higlighted {
+    color: #f0d117;
+}
+
+#map-canvas {
+    height: 75%;
+    margin: 0px;
+    padding: 0px;
+}
+
+/*Serve*/
+.translucent-bg.yellow:after {
+	background-color: rgba(240, 209, 23, 1);
+    
+}
+
+.blue-font {
+    color:#2d348e !important;
+}
