@@ -136,7 +136,9 @@
     <Content Include="Global.asax" />
     <Content Include="images\banner--.jpg" />
     <Content Include="images\banner.jpg" />
+    <Content Include="images\bg-believe-image.jpg" />
     <Content Include="images\bg-image-2.jpg" />
+    <Content Include="images\bg-mission-image.jpg" />
     <Content Include="images\history-image-1.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\portfolio-1.jpg" />
@@ -152,6 +154,10 @@
     <Content Include="images\portfolio-8.jpg" />
     <Content Include="images\portfolio-9.jpg" />
     <Content Include="images\ptr-romulo.png" />
+    <Content Include="images\services\church.png" />
+    <Content Include="images\services\gigs.png" />
+    <Content Include="images\services\pray-hand.png" />
+    <Content Include="images\tcmi-pin.png" />
     <Content Include="images\toremove\logo.png" />
     <Content Include="js\custom.js" />
     <Content Include="js\template.js" />
