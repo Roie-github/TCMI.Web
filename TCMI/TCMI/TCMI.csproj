@@ -136,14 +136,7 @@
     <Content Include="Global.asax" />
     <Content Include="images\banner--.jpg" />
     <Content Include="images\banner.jpg" />
-    <Content Include="images\bg-image-1.jpg" />
     <Content Include="images\bg-image-2.jpg" />
-    <Content Include="images\client-1.png" />
-    <Content Include="images\client-2.png" />
-    <Content Include="images\client-3.png" />
-    <Content Include="images\client-4.png" />
-    <Content Include="images\client-5.png" />
-    <Content Include="images\client-6.png" />
     <Content Include="images\history-image-1.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\portfolio-1.jpg" />
@@ -159,10 +152,6 @@
     <Content Include="images\portfolio-8.jpg" />
     <Content Include="images\portfolio-9.jpg" />
     <Content Include="images\ptr-romulo.png" />
-    <Content Include="images\section-image-1.png" />
-    <Content Include="images\testimonial-1.png" />
-    <Content Include="images\testimonial-2.png" />
-    <Content Include="images\testimonial-3.png" />
     <Content Include="images\toremove\logo.png" />
     <Content Include="js\custom.js" />
     <Content Include="js\template.js" />
