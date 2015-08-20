@@ -27,6 +27,7 @@ File Description: Place here your custom CSS styles
     font-family: FontAwesome;
     font-size: 1.25em;
 }
+
 .mission-quote-right:before {
     content: "\f10e";
     display: inline-block;
@@ -55,10 +56,47 @@ File Description: Place here your custom CSS styles
 
 /*Serve*/
 .translucent-bg.yellow:after {
-	background-color: rgba(240, 209, 23, 1);
-    
+    background-color: rgba(240, 209, 23, 1);
 }
 
 .blue-font {
-    color:#2d348e !important;
+    color: #2d348e !important;
+}
+
+/* EVENT */
+.ddshadow {
+    
+    background-color: #3dc3bd;
+    box-shadow: 0 10px 30px black;
+    /*padding: 0 15px 0 15px;*/
+    margin-top: 0px;
+    
+    
+}
+
+    .ddshadow h2 {
+        margin: 10px 10px 10px 10px;
+        padding: 10px 0 10px 0;  
+        text-align:center; 
+    }
+
+.carousel {
+    background: #2f4357;
+    margin-top: 20px;
+}
+
+    .carousel .item img {
+        margin: 0 auto; /* Align slide image horizontally center */
+    }
+
+    .carousel .item div {
+        margin: 0 auto; /* Align slide image horizontally center */
+    }
+
+
+
+.box {
+    height: 350px;
+    width: 590px;
+    padding: 50px 0 0 0;
 }

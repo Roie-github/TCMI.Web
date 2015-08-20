@@ -40,6 +40,23 @@
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 
+    <script src="~/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script type="text/javascript">
+        /*$(document).ready(function () {
+            $("#myCarousel").carousel({
+                interval: 100000,
+                pause: true,
+
+            });
+        });*/
+        $(document).ready(function () {
+            $("#myCarousel").carousel('pause');
+        });
+    </script>
+
+
 </head>
 
 <body class="no-trans">
@@ -119,8 +136,8 @@
                                                     <li><a href="#pray">Pray</a></li>
                                                 </ul>
                                             </li>
-                                            
-                                            <li><a href="#clients">Sample</a></li>
+
+                                            <li><a href="#events">Events</a></li>
                                             <li><a href="#contact">Contact</a></li>
                                         </ul>
                                     </div>
@@ -723,7 +740,7 @@
                 </div>
             </div>
         </div>
-       
+
     </div>
     <div class="translucent-bg yellow">
         <div class="container">
@@ -737,7 +754,6 @@
         </div>
     </div>
     <!-- section end -->
-
     <!-- section start give -->
     <!-- ================ -->
     <div class="section translucent-bg bg-mission-image" data-animation-effect="fadeIn">
@@ -749,7 +765,7 @@
 
                     <p class="lead text-center"><i class="mission-quote-left"></i>Bring the whole tithe into the storehouse, that there may be food in my house. Test me in this,” says the LORD Almighty, “and see if I will not throw open the floodgates of heaven and pour out so much blessing that there will not be room enough to store it.<i class="mission-quote-right"></i></p>
                     <p class="lead text-center">
-                      <cite>- Malachi 3:10</cite>  
+                        <cite>- Malachi 3:10</cite>
                     </p>
                     <div class="space"></div>
                     <div class="row">
@@ -776,7 +792,6 @@
         </div>
     </div>
     <!-- section end -->
-
     <!-- section start pray -->
     <!-- ================ -->
     <div class="section">
@@ -789,162 +804,52 @@
             <br>
             <div class="row object-non-visible" data-animation-effect="fadeIn">
                 <div class="col-md-12">
-                    
+
                 </div>
             </div>
         </div>
 
     </div>
     <!-- section end -->
-
     <!-- section start -->
     <!-- ================ -->
     <div class="section translucent-bg bg-image-2 pb-clear">
         <div class="container object-non-visible" data-animation-effect="fadeIn">
-            <h1 id="clients" class="title text-center">Sample</h1>
+            <h1 id="events" class="title text-center">Events</h1>
             <div class="space"></div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="media testimonial">
-                        <div class="media-left">
-                            <img src="images/testimonial-1.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">You are Amazing!</h3>
-                            <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur quo.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
+
+            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Carousel indicators -->
+                <ol class="carousel-indicators">
+                   @Html.Raw(ViewBag.eventNav)
+               </ol>
+                <!-- Wrapper for carousel items -->
+                <div class="carousel-inner">
+                   @Html.Raw(ViewBag.eventlist)
                 </div>
-                <div class="col-md-4">
-                    <div class="media testimonial">
-                        <div class="media-left">
-                            <img src="images/testimonial-2.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Yeah!</h3>
-                            <blockquote>
-                                <p>Iure aperiam consequatur quo quis exercitationem reprehenderit dolor vel ducimus.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media testimonial">
-                        <div class="media-left">
-                            <img src="images/testimonial-3.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Thank You!</h3>
-                            <blockquote>
-                                <p>Aperiam consequatur quo quis exercitationem reprehenderit suscipit iste placeat.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
+                <!-- Carousel controls -->
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
             </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="media testimonial">
-                        <div class="media-left">
-                            <img src="images/testimonial-2.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Thank You!</h3>
-                            <blockquote>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure aperiam consequatur quo.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media testimonial">
-                        <div class="media-left">
-                            <img src="images/testimonial-3.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Amazing!</h3>
-                            <blockquote>
-                                <p>Iure aperiam consequatur quo quis exercitationem reprehenderit dolor vel ducimus.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="media testimonial">
-                        <div class="media-left">
-                            <img src="images/testimonial-1.png" alt="">
-                        </div>
-                        <div class="media-body">
-                            <h3 class="media-heading">Best!</h3>
-                            <blockquote>
-                                <p>Aperiam consequatur quo quis exercitationem reprehenderit suscipit iste placeat.</p>
-                                <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                            </blockquote>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
         </div>
         <!-- section start -->
         <!-- ================ -->
         <div class="translucent-bg blue">
             <div class="container">
-                <div class="list-horizontal">
-                    <div class="row">
-                        <div class="col-xs-2">
-                            <div class="list-horizontal-item">
-                                <img src="images/client-1.png" alt="client">
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="list-horizontal-item">
-                                <img src="images/client-2.png" alt="client">
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="list-horizontal-item">
-                                <img src="images/client-3.png" alt="client">
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="list-horizontal-item">
-                                <img src="images/client-4.png" alt="client">
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="list-horizontal-item">
-                                <img src="images/client-5.png" alt="client">
-                            </div>
-                        </div>
-                        <div class="col-xs-2">
-                            <div class="list-horizontal-item">
-                                <img src="images/client-6.png" alt="client">
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="text-center">See upcoming events.</h1>
                     </div>
                 </div>
             </div>
         </div>
         <!-- section end -->
-    </div>
-    <!-- section end -->
-    <!-- section start -->
-    <!-- ================ -->
-    <div class="default-bg space">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    <h1 class="text-center">10000+ Happy Clients!</h1>
-                </div>
-            </div>
-        </div>
     </div>
     <!-- section end -->
     <!-- footer start -->
