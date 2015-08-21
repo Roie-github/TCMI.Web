@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@model TCMI.Models.PageModel
+
+<!DOCTYPE html>
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="en">
@@ -821,12 +823,54 @@
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Carousel indicators -->
                 <ol class="carousel-indicators">
-                   @Html.Raw(ViewBag.eventNav)
-               </ol>
+                    @*@Html.Raw(ViewBag.eventNav)*@
+                    @{int j = 0;}
+                    @foreach (var item in Model.Events)
+                    {
+                        if (j == 0)
+                        {
+
+                            <li data-target='#myCarousel' data-slide-to='@j.ToString()' class='active'></li> 
+                        }
+                        else
+                        {
+
+                           <li data-target='#myCarousel' data-slide-to='@j.ToString() '></li>
+                        }
+
+                        j++;
+                    }
+
+                </ol>
+
                 <!-- Wrapper for carousel items -->
                 <div class="carousel-inner">
-                   @Html.Raw(ViewBag.eventlist)
+                    @{int i = 0;}
+                    @foreach (var item in Model.Events)
+                    {
+
+                        <div @if (i==0){ <text> class='active item' </text>  } else{ <text> class='item' </text> }>
+
+
+                            <div class='box'>
+                                <div class='ddshadow'><h2>@item.Title</h2></div>
+                                <div class='carousel-caption'>
+                                    <p><h3> @item.Description </h3></p>
+                                    <p><i class='fa fa-map-marker'></i>  @item.Venue</p>
+                                    <p><i class='fa fa-calendar'></i> @item.DateOfEvent.ToLongDateString()</p>
+                                    <p><i class='fa fa-clock-o'></i> @item.Time</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        i++;
+                    }
                 </div>
+
+
+                @*<div class="carousel-inner">
+                        @Html.Raw(ViewBag.eventlist)
+                    </div>*@
                 <!-- Carousel controls -->
                 <a class="carousel-control left" href="#myCarousel" data-slide="prev">
                     <span class="glyphicon glyphicon-chevron-left"></span>

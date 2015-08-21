@@ -18,70 +18,35 @@ namespace TCMI.Controllers
         public ActionResult Index()
         {
             IEnumerable<TCMIContentServices.Event> events = client.GetActiveEvents();
-            ViewBag.eventNav = BuildNav(events);
-            ViewBag.eventlist = BuildEvents(events);
+            IEnumerable<TCMIContentServices.Prayer> prayers = client.GetPrayers();
+            PageModel p = new PageModel();
+            p.Events = setEvent(events);
 
-            return View();
+            return View(p);
         }
 
-        public string BuildNav(IEnumerable<TCMIContentServices.Event> events)
+        public IEnumerable<TCMI.Models.Event> setEvent(IEnumerable<TCMIContentServices.Event> events)
         {
-            StringBuilder result = new StringBuilder();
-
-            int i = 0;
+            List<Models.Event> result = new List<Models.Event>();
             foreach (var item in events)
             {
-                if (i == 0)
+                Models.Event e = new Models.Event
                 {
-                    result.Append("<li data-target='#myCarousel' data-slide-to='"+ i.ToString() +"' class='active'></li>");
-                }
-                else
-                {
-                    result.Append("<li data-target='#myCarousel' data-slide-to='" + i.ToString() + "'></li>");
-                }
-
-                i++;
+                    id = item.id,
+                    Title = item.Title,
+                    Venue = item.Venue,
+                    Description = item.Description,
+                    DateOfEvent = item.DateOfEvent,
+                    Time = item.Time,
+                    Expired = item.Expired
+                };
+                result.Add(e);
             }
+            return result;
 
-
-            return result.ToString();
         }
 
-        public string BuildEvents(IEnumerable<TCMIContentServices.Event> events)
-        {
-            StringBuilder result = new StringBuilder();
-            
-            int i = 0;
-            foreach (var item in events)
-            {
-                if (i == 0)
-                {
-                    result.Append("<div class='active item'>");
-                }
-                else
-                {
-                    result.Append("<div class='item'>");
-                }
-
-
-                result.Append("     <div class='box'>");
-                result.Append("             <div class='ddshadow'><h2>" + item.Title + "</h2></div>");
-                result.Append("             <div class='carousel-caption'>");
-                result.Append("                     <p><h3>" + item.Description + "</h3></p>");
-                result.Append("                     <p><i class='fa fa-map-marker'></i> "+ item.Venue +"</p>");
-                result.Append("                     <p><i class='fa fa-calendar'></i> " + item.DateOfEvent.ToLongDateString() + "</p>");
-                result.Append("                     <p><i class='fa fa-clock-o'></i> " + item.Time + "</p>");
-                result.Append("             </div>");
-                result.Append("     </div>");
-                result.Append("</div>");
-
-
-                i++;
-            }
-           
-
-            return result.ToString();
-        }
+       
 
     }
 }

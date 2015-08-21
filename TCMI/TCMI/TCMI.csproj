@@ -115,6 +115,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Event.cs" />
+    <Compile Include="Models\PageModel.cs" />
+    <Compile Include="Models\Prayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\TCMIContentServices\Reference.cs">
       <AutoGen>True</AutoGen>
