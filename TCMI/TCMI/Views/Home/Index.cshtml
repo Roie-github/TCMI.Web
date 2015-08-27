@@ -44,7 +44,7 @@
 
     <script src="~/bootstrap/js/bootstrap.min.js"></script>
 
-
+    
     <script type="text/javascript">
         /*$(document).ready(function () {
             $("#myCarousel").carousel({
@@ -807,6 +807,9 @@
             <div class="row object-non-visible" data-animation-effect="fadeIn">
                 <div class="col-md-12">
 
+                </div>
+                <div class="col-md-12">
+                    @Html.Partial("_ViewAllPrayers",  Model.Prayers)
                 </div>
             </div>
         </div>

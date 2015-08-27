@@ -1,0 +1,45 @@
+﻿@model List< TCMI.Models.Prayer>
+<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    @{int i = 0;
+    string tempAc= "collapse";
+    string myhref = "item";
+    
+    }
+    @foreach(var item in Model)
+    {
+        tempAc = tempAc + i.ToString();
+        myhref = myhref + i.ToString();
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="@item.id" >
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#@myhref"
+                       @if (i == 0) { <text> class="" </text>         } else { <text> class="collapsed" </text>        }
+                       @if (i == 0) { <text> aria-expanded="true" </text>         } else { <text> aria-expanded="false" </text>        }
+                       aria-controls="@tempAc">
+                      
+                        @item.Name
+                    </a>
+                   
+                </h4>
+               
+            </div>
+            <div id="@myhref" @if (i == 0) { <text> class='panel-collapse collapse in' </text>     } else { <text> class='panel-collapse collapse' </text>    } role="tabpanel" aria-labelledby="@item.id">
+                <div class="panel-body">
+                    <div class="col-md-4">
+                        <img src="images/ptr-romulo.png">
+                    </div>
+                    <div class="col-md-8">
+                        @item.PrayerRequest
+                    </div>
+                    <div class="col-md-8">
+                        Prayed for @item.Prayed times.
+                        <button class="btn btn-default">I PRAY FOR THIS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        i++;
+    }
+
+</div>

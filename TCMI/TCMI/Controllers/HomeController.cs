@@ -21,7 +21,7 @@ namespace TCMI.Controllers
             IEnumerable<TCMIContentServices.Prayer> prayers = client.GetPrayers();
             PageModel p = new PageModel();
             p.Events = setEvent(events);
-
+            p.Prayers = setPrayers(prayers);
             return View(p);
         }
 
@@ -46,7 +46,36 @@ namespace TCMI.Controllers
 
         }
 
-       
+        public IEnumerable<TCMI.Models.Prayer> setPrayers(IEnumerable<TCMIContentServices.Prayer> prayer)
+        {
+            List<Models.Prayer> result = new List<Models.Prayer>();
+            foreach (var item in prayer)
+            {
+                if (item.Confidentiality.Equals("Anonymous"))
+                {
+                    item.Name = "Anonymous";
+                }
+                Models.Prayer p = new Models.Prayer
+                {
+                    id = item.id,
+                    Name = item.Name,
+                    Email = item.Email,
+                    Phone = item.Phone,
+                    Prayed = item.Prayed,
+                    Answered = item.Answered,
+                    Confidentiality = item.Confidentiality,
+                    PrayerRequest = item.PrayerRequest,
+                    Received = item.Received
+                };
+                if (!item.Confidentiality.Equals("Private"))
+                {
+                    result.Add(p);
+                }
+                
+            }
+            return result;
+        }
+
 
     }
 }

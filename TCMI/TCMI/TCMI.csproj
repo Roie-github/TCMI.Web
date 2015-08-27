@@ -237,6 +237,7 @@
     </Content>
     <Content Include="Views\Web.config" />
     <None Include="Service References\TCMIContentServices\TCMIContent.wsdl" />
+    <Content Include="Views\Home\_ViewAllPrayers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
