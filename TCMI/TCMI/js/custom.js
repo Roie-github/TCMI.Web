@@ -7,6 +7,15 @@
  * File Description: Place here your custom scripts
  */
 
+// for the Event Carousel
+$(document).ready(function () {
+    $("#myCarousel").carousel({
+        interval: 100000,
+        pause: true,
+
+    });
+});
+
 // Closes the Responsive Menu on Menu Item Click
 $('#navbar-collapse-1 a').click(function () {
     var href = $(this).attr('href');

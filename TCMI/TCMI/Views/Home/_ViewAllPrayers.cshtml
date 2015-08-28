@@ -1,45 +1,65 @@
-﻿@model List< TCMI.Models.Prayer>
+﻿@model List<TCMI.Models.Prayer>
 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
     @{int i = 0;
-    string tempAc= "collapse";
+    string tempAc = "collapse";
     string myhref = "item";
-    
+    string bag = ViewBag.MyId != null ? ViewBag.MyId : "";
     }
-    @foreach(var item in Model)
+    @foreach (var item in Model)
     {
         tempAc = tempAc + i.ToString();
         myhref = myhref + i.ToString();
+
         <div class="panel panel-default">
-            <div class="panel-heading" role="tab" id="@item.id" >
+            <div class="panel-heading" role="tab" id="@item.id">
                 <h4 class="panel-title">
                     <a data-toggle="collapse" data-parent="#accordion" href="#@myhref"
-                       @if (i == 0) { <text> class="" </text>         } else { <text> class="collapsed" </text>        }
-                       @if (i == 0) { <text> aria-expanded="true" </text>         } else { <text> aria-expanded="false" </text>        }
+                       @if (bag.Equals(item.id.ToString())) { <text> class="" </text>      } else { <text> class="collapsed" </text>              }
+                       @if (bag.Equals(item.id.ToString())) { <text> aria-expanded="true" </text>               } else { <text> aria-expanded="false" </text>              }
                        aria-controls="@tempAc">
-                      
-                        @item.Name
+
+                        @{ string toUpper = item.Name;
+                        <text> @toUpper.ToUpper() </text>
+
+                        }
                     </a>
-                   
+
                 </h4>
-               
+
             </div>
-            <div id="@myhref" @if (i == 0) { <text> class='panel-collapse collapse in' </text>     } else { <text> class='panel-collapse collapse' </text>    } role="tabpanel" aria-labelledby="@item.id">
+            <div id="@myhref" @if ( bag.Equals(item.id.ToString())) { <text> class='panel-collapse collapse in' </text>           } else { <text> class='panel-collapse collapse' </text>          } role="tabpanel" aria-labelledby="@item.id">
                 <div class="panel-body">
-                    <div class="col-md-4">
-                        <img src="images/ptr-romulo.png">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                Prayed for @item.Prayed @if (item.Prayed >= 2)
+                                {<text>times.</text>  }
+                                else
+                                { <text>time. </text> }
+
+                                @using (Ajax.BeginForm("IPray", "home", new { id = @item.id }, new AjaxOptions
+                                {
+                                    InsertionMode = InsertionMode.Replace,
+                                    UpdateTargetId = "divAllPrayers"
+
+                                }))
+                                {
+                                <input type="submit" class="btn btn-default" value="I PRAY FOR THIS" />
+                                }
+
+                            </div>
+                            <div class="panel-body">
+                                @item.PrayerRequest
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="col-md-8">
-                        @item.PrayerRequest
-                    </div>
-                    <div class="col-md-8">
-                        Prayed for @item.Prayed times.
-                        <button class="btn btn-default">I PRAY FOR THIS</button>
-                    </div>
+
                 </div>
             </div>
         </div>
-        
-        i++;
+
+                                i++;
     }
 
 </div>

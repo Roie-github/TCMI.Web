@@ -24,6 +24,15 @@ namespace TCMI.Controllers
             p.Prayers = setPrayers(prayers);
             return View(p);
         }
+        
+        public ActionResult IPray(int id)
+        {
+            ViewBag.MsgResult= client.Prayed(id);
+            IEnumerable<TCMIContentServices.Prayer> prayers = client.GetPrayers();
+            IEnumerable<Models.Prayer> plist = setPrayers(prayers);
+            ViewBag.MyId = id.ToString();
+            return PartialView("_ViewAllPrayers", plist);
+        }
 
         public IEnumerable<TCMI.Models.Event> setEvent(IEnumerable<TCMIContentServices.Event> events)
         {
@@ -79,3 +88,4 @@ namespace TCMI.Controllers
 
     }
 }
+
