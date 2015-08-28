@@ -22,6 +22,7 @@ namespace TCMI.Controllers
             PageModel p = new PageModel();
             p.Events = setEvent(events);
             p.Prayers = setPrayers(prayers);
+            p.Prayer = new Models.Prayer();
             return View(p);
         }
         
@@ -31,6 +32,21 @@ namespace TCMI.Controllers
             IEnumerable<TCMIContentServices.Prayer> prayers = client.GetPrayers();
             IEnumerable<Models.Prayer> plist = setPrayers(prayers);
             ViewBag.MyId = id.ToString();
+            return PartialView("_ViewAllPrayers", plist);
+        }
+
+        public ActionResult Create(Models.Prayer prayer)
+        {
+            string retValue = string.Empty;
+            if (ModelState.IsValid)
+            {
+                retValue = client.AddPrayer(prayer.Name, prayer.Email, prayer.Phone, prayer.Confidentiality, prayer.PrayerRequest);
+                ViewBag.ReturnMessage = retValue;
+            }
+            ViewBag.ReturnMessage = retValue;
+
+            IEnumerable<TCMIContentServices.Prayer> prayers = client.GetPrayers();
+            IEnumerable<Models.Prayer> plist = setPrayers(prayers);
             return PartialView("_ViewAllPrayers", plist);
         }
 

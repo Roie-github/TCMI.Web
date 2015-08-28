@@ -793,7 +793,7 @@
             <br>
             <div class="row object-non-visible" data-animation-effect="fadeIn">
                 <div class="col-md-12">
-
+                    @Html.Partial("_AddPrayer", Model.Prayer)
                 </div>
                 <div id="divAllPrayers" class="col-md-12">
                     @Html.Partial("_ViewAllPrayers",  Model.Prayers)
@@ -961,11 +961,11 @@
 
     
     <!-- for ajax -->
-
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
-
     <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     
 
     <!-- Modernizr javascript -->

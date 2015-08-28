@@ -1,0 +1,91 @@
+﻿@model TCMI.Models.Prayer
+
+<div class="panel-group" id="accordion3" role="tablist" aria-multiselectable="true">
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="headingPrayer">
+            <h4 class="panel-title">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapsePrayer" aria-expanded="false" aria-controls="collapsePrayer">
+                    <i class="fa fa-comment"></i> SHARE YOUR PRAYER REQUEST
+                </a>
+            </h4>
+        </div>
+        <div id="collapsePrayer" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingPrayer">
+            
+                <div class="panel-body">
+
+                    <div class="col-md-8">
+                        @using (Ajax.BeginForm("create", "home", new AjaxOptions
+                                {
+                                    InsertionMode = InsertionMode.Replace,
+                                    UpdateTargetId = "divAllPrayers",
+                                    OnComplete = "resetFields()"
+                                }))
+                    {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true)
+                            <div class="panel panel-primary">
+
+
+                                <div class="panel-body">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Name)
+
+                                        @Html.EditorFor(model => model.Name)
+                                        @Html.ValidationMessageFor(model => model.Name)
+                                        
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Email)
+
+                                        @Html.EditorFor(model => model.Email)
+                                        @Html.ValidationMessageFor(model => model.Email)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Phone)
+
+                                        @Html.EditorFor(model => model.Phone)
+                                        @Html.ValidationMessageFor(model => model.Phone)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Confidentiality)
+
+                                        @Html.DropDownListFor(model => model.Confidentiality, new List<SelectListItem> {
+                                                                new SelectListItem { Value="Public",Text="Public"},
+                                                                new SelectListItem{ Value="Anonymous",Text="Anonymous"},
+                                                                new SelectListItem{ Value="Private",Text="Private"}
+                                                                  }, "Select Confidentiality")
+                                        @Html.ValidationMessageFor(model => model.Confidentiality)
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Prayer Request</label>
+
+                                        @Html.TextAreaFor(model => model.PrayerRequest)
+                                        @Html.ValidationMessageFor(model => model.PrayerRequest)
+                                    </div>
+                                </div>
+                                <div class="panel-footer">
+                                    <p>
+                                        <button type="submit" class="btn btn-default"><i class="fa fa-floppy-o"></i> Save</button>
+                                    </p>
+                                </div>
+                            </div> <!--end panel-->
+
+                    }
+                    </div>
+                </div>
+            
+        </div>
+    </div>
+
+</div>
+<script>
+    function resetFields() {
+        $("#collapsePrayer input[type=text]").val("");
+    }
+</script>

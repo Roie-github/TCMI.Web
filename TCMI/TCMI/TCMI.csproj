@@ -184,6 +184,8 @@
     <Content Include="Scripts\jquery-1.8.3.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Service References\TCMIContentServices\TCMI.TCMIContentServices.AddEventResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -243,6 +245,7 @@
     <Content Include="Views\Web.config" />
     <None Include="Service References\TCMIContentServices\TCMIContent.wsdl" />
     <Content Include="Views\Home\_ViewAllPrayers.cshtml" />
+    <Content Include="Views\Home\_AddPrayer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

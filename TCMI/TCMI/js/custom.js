@@ -16,6 +16,24 @@ $(document).ready(function () {
     });
 });
 
+$(document).ready(function () {
+    $("#collapsePrayer input[type=text]").addClass("form-control");
+    $("#collapsePrayer textarea").addClass("form-control")
+    $("#collapsePrayer input[type=email]").addClass("form-control");
+    $("#collapsePrayer input[type=datetime]").addClass("form-control");
+    $("#collapsePrayer select").addClass("form-control");
+    $("#collapsePrayer span").addClass("text-danger");
+    
+
+    $("#Name").attr("placeholder", "Name");
+    $("#Email").attr("placeholder", "Email");
+    $("#Phone").attr("placeholder", "Phone");
+    $("#PrayerRequest").attr("placeholder", "PrayerRequest");
+
+});
+
+
+
 // Closes the Responsive Menu on Menu Item Click
 $('#navbar-collapse-1 a').click(function () {
     var href = $(this).attr('href');

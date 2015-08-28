@@ -37,14 +37,14 @@
                                 else
                                 { <text>time. </text> }
 
-                                @using (Ajax.BeginForm("IPray", "home", new { id = @item.id }, new AjaxOptions
+                                @using (Ajax.BeginForm("ipray", "home", new { id = @item.id }, new AjaxOptions
                                 {
                                     InsertionMode = InsertionMode.Replace,
                                     UpdateTargetId = "divAllPrayers"
 
                                 }))
                                 {
-                                <input type="submit" class="btn btn-default" value="I PRAY FOR THIS" />
+                                <input type="submit" class="btn btn-default" value="I PRAYED FOR THIS" />
                                 }
 
                             </div>
