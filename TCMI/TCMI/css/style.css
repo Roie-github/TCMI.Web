@@ -516,12 +516,12 @@ textarea {
 }
 
 /* SMALL SCREEN MOBILE*/
-@media (max-width:360px) {
+@media (max-width:560px) {
     .banner-caption h1 {
         font-size: 30px;
     }
     .site-name {
-        font-size: 30px;
+        font-size: 30px !important;
     }
    
 }

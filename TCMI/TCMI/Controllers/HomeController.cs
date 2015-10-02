@@ -34,13 +34,13 @@ namespace TCMI.Controllers
             ViewBag.MyId = id.ToString();
             return PartialView("_ViewAllPrayers", plist);
         }
-
+        [ValidateInput(false)]
         public ActionResult Create(Models.Prayer prayer)
         {
             string retValue = string.Empty;
             if (ModelState.IsValid)
             {
-                retValue = client.AddPrayer(prayer.Name, prayer.Email, prayer.Phone, prayer.Confidentiality, prayer.PrayerRequest);
+                retValue = client.AddPrayer(HttpUtility.HtmlEncode(prayer.Name), prayer.Email, HttpUtility.HtmlEncode(prayer.Phone), prayer.Confidentiality, HttpUtility.HtmlEncode(prayer.PrayerRequest));
                 ViewBag.ReturnMessage = retValue;
             }
             ViewBag.ReturnMessage = retValue;
